@@ -1,0 +1,33 @@
+body {
+    background: #2b3a1d;
+    color: white;
+    font-family: Arial;
+    text-align: center;
+}
+
+.login-box,
+.profile-card {
+    width: 400px;
+    margin: 100px auto;
+    background: #3d4f2a;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 0 20px black;
+}
+
+input {
+    width: 90%;
+    padding: 12px;
+    margin: 20px 0;
+}
+
+button {
+    background: #c19a3f;
+    border: none;
+    padding: 12px 30px;
+    cursor: pointer;
+}
+
+.error {
+    color: red;
+}

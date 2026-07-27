@@ -1,0 +1,41 @@
+app.post("/login", (req, res) => {
+  const enteredCode = req.body.code.trim();
+
+  fs.readFile("auth.txt", "utf8", (err, data) => {
+    if (err) {
+      console.log(err);
+      return res.send("Authentication file not found.");
+    }
+
+    const lines = data.split(/\r?\n/);
+
+    let matchedUser = null;
+
+    for (const line of lines) {
+      if (!line.trim()) continue;
+
+      const [code, username] = line.trim().split("|");
+
+      console.log(
+        "Code from file:",
+        `"${code}"`,
+        "Entered:",
+        `"${enteredCode}"`
+      );
+
+      if (code.trim() === enteredCode) {
+        matchedUser = username.trim();
+        break;
+      }
+    }
+
+    if (matchedUser && profiles[matchedUser]) {
+      req.session.user = matchedUser;
+      return res.redirect("/profile");
+    }
+
+    res.render("login", {
+      error: "Invalid Authorization Code",
+    });
+  });
+});
