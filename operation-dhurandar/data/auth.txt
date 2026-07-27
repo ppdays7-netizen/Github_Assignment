@@ -1,0 +1,10 @@
+# Operation DHURANDAR — credential store (FICTIONAL DEMO ONLY)
+# Format (one officer per line):  username,password,rank
+# Lines beginning with '#' are ignored. Edit/append while the server runs;
+# accounts are reloaded automatically on the next login attempt.
+# NOTE: passwords are plain text for the demo. Set HASH_PASSWORDS=true to enable bcrypt.
+Piyush,EmotionalPaaji,Brigadier
+Gaurang,HappyPaaji,Major Genral
+Durvankur,SadPaaji,Colonel
+Vedant,FearPaaji,Lieutenant
+
