@@ -18,3 +18,14 @@ inventory[item] = inventory.get(item, 0) + quantity
 print("\nUpdated Inventory:")
 for item, qty in inventory.items():
     print(f"{item}: {qty}")
+
+
+soldiers = [
+    {"Name": "Piyush", "Rank": "Brigadier", "Unit": "Infantry"},
+    {"Name": "Gaurang", "Rank": "Major", "Unit": "Artillery"},
+    {"Name": "Durvankur", "Rank": "Lieutenant", "Unit": "Engineers"}
+]
+
+print("=== Soldier Records ===")
+for s in soldiers:
+    print(f"{s['Name']} | {s['Rank']} | {s['Unit']}")
